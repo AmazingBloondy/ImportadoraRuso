@@ -68,9 +68,10 @@ namespace RUSO
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Opcion op1 = new Opcion();
+			Vehiculo op1 = new Vehiculo(usuario, level);
 			op1.Show();
 			this.Hide();
+			
 		}
 
 		private void button2_Click(object sender, EventArgs e)
@@ -95,6 +96,53 @@ namespace RUSO
 		private void timer1_Tick(object sender, EventArgs e)
 		{
 			label2.Text = DateTime.Now.ToLongTimeString();
+		}
+
+		private void button6_Click(object sender, EventArgs e)
+		{
+			Compras op1 = new Compras(usuario, level);
+			op1.Show();
+			this.Hide();
+		}
+
+		private void button8_Click(object sender, EventArgs e)
+		{
+		
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			Clientes op1 = new Clientes(usuario, level);
+			op1.Show();
+			this.Hide();
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+			Empleados op1 = new Empleados(usuario, level);
+			op1.Show();
+			this.Hide();
+		}
+
+		private void button7_Click(object sender, EventArgs e)
+		{
+			Exportadores op1 = new Exportadores(usuario, level);
+			op1.Show();
+			this.Hide();
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+			Reparaciones op1 = new Reparaciones(usuario, level);
+			op1.Show();
+			this.Hide();
+		}
+
+		private void button9_Click(object sender, EventArgs e)
+		{
+			Ventas op1 = new Ventas(usuario, level);
+			op1.Show();
+			this.Hide();
 		}
 	}
 }
