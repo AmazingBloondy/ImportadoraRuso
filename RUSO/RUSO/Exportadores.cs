@@ -32,7 +32,7 @@ namespace RUSO
 
 			MySqlCommand codigo = new MySqlCommand();
 			codigo.Connection = databaseConnection;
-			codigo.CommandText = ("SELECT * FROM talleres");
+			codigo.CommandText = ("SELECT * FROM exportadores");
 			try
 			{
 				MySqlDataAdapter ejecutar = new MySqlDataAdapter();
@@ -110,8 +110,8 @@ namespace RUSO
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			string query = "INSERT INTO Talleres(encargado, nombre_taller, direccion) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "')";
-			operacion = "INSERT INTO Talleres(encargado, nombre_taller, direccion) VALUES (" + textBox1.Text + "," + textBox2.Text + "," + textBox3.Text + ")";
+			string query = "INSERT INTO exportadores(nombre_exportador, pais, sitio_web) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "')";
+			operacion = "INSERT INTO exportadores(nombre_exportador, pais, sitio_web) VALUES (" + textBox1.Text + "," + textBox2.Text + "," + textBox3.Text + ")";
 
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
@@ -140,8 +140,8 @@ namespace RUSO
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			string query = "DELETE FROM Talleres  WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "DELETE FROM Talleres  WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "DELETE FROM exportadores  WHERE  cod_exportador =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			operacion = "DELETE FROM exportadores  WHERE  cod_exportador =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
@@ -181,8 +181,8 @@ namespace RUSO
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-			string query = "UPDATE Talleres SET encargado ='" + textBox1.Text + "', nombre_taller = '" + textBox2.Text + "', direccion='" + textBox3.Text + "' WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "UPDATE Talleres SET encargado =" + textBox1.Text + ", nombre_taller = " + textBox2.Text + ", direccion=" + textBox3.Text + " WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "UPDATE exportadores SET nombre_exportador ='" + textBox1.Text + "', pais = '" + textBox2.Text + "', sitio_web='" + textBox3.Text + "' WHERE  cod_exportador =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			operacion = "UPDATE Talleres SET nombre_exportador =" + textBox1.Text + ", pais = " + textBox2.Text + ", sitio_web=" + textBox3.Text + " WHERE  cod_exportador =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try

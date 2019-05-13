@@ -25,6 +25,9 @@ namespace RUSO
 			usuario = user;
 			level = nivel;
 			actualizarbtn.Enabled = false;
+			//fecha con format aceptado por Msql
+			dateTimePicker1.Format = DateTimePickerFormat.Custom;
+			dateTimePicker1.CustomFormat = "yyyy-MM-dd";
 		}
 
 		void llenartabla()
@@ -32,7 +35,7 @@ namespace RUSO
 
 			MySqlCommand codigo = new MySqlCommand();
 			codigo.Connection = databaseConnection;
-			codigo.CommandText = ("SELECT * FROM talleres");
+			codigo.CommandText = ("SELECT * FROM clientes");
 			try
 			{
 				MySqlDataAdapter ejecutar = new MySqlDataAdapter();
@@ -49,6 +52,26 @@ namespace RUSO
 				MessageBox.Show("ERROR" + e.ToString());
 				databaseConnection.Close();
 			}
+
+			try
+			{
+				comboBox1.Text = "SEXO";
+				comboBox1.Items.Clear();
+
+				databaseConnection.Open();
+				MySqlCommand command = new MySqlCommand("SELECT * FROM sexos", databaseConnection);
+				MySqlDataReader reader = command.ExecuteReader();
+				while (reader.Read())
+				{
+					comboBox1.Refresh();
+					comboBox1.Items.Add(reader.GetValue(1).ToString());
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			databaseConnection.Close();
 		}
 		void log(string queryin)
 		{
@@ -110,21 +133,28 @@ namespace RUSO
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			string query = "INSERT INTO Talleres(encargado, nombre_taller, direccion) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "')";
-			operacion = "INSERT INTO Talleres(encargado, nombre_taller, direccion) VALUES (" + textBox1.Text + "," + textBox2.Text + "," + textBox3.Text + ")";
+			string query = "INSERT INTO clientes(primer_nombre, segundo_nombre, primer_apellido,"+
+			" segundo_apellido, dpi, sexo, fecha_nacimiento, direccion) VALUES ('"+nom1.Text+"','"+nom2.Text+"','"+apel1.Text+"','"+apel2.Text+"',"
+			+"'"+dpi.Text+"','"+comboBox1.Text+"','"+dateTimePicker1.Text+"','"+dir.Text+"')";
+			operacion = "INSERT INTO clientes(primer_nombre, segundo_nombre, primer_apellido," +
+			" segundo_apellido, dpi, sexo, fecha_nacimiento, direccion) VALUES (" + nom1.Text + "," + nom2.Text + "," + apel1.Text + "," + apel2.Text + ","
+			+ "" + dpi.Text + "," + comboBox1.Text + "," + dateTimePicker1.Text + "," + dir.Text + ")";
 
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
 			{
-				if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" )
+				if (nom1.Text != "" && nom2.Text != "" && apel1.Text != "" && comboBox1.Text != "SEXO")
 				{
 					consulta.ExecuteNonQuery();
 					MessageBox.Show("INGRSO CORRECTO");
 					log(operacion);
-					textBox1.Text = "";
-					textBox3.Text = "";
-					textBox2.Text = "";
+					nom1.Text = "";
+					apel1.Text = "";
+					nom2.Text = "";
+					apel2.Text = "";
+					dpi.Text = "";
+					dir.Text = "";
 					databaseConnection.Close();
 					llenartabla();
 
@@ -140,8 +170,8 @@ namespace RUSO
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			string query = "DELETE FROM Talleres  WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "DELETE FROM Talleres  WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "DELETE FROM clientes  WHERE  cod_cliente =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			operacion = "DELETE FROM clientes  WHERE  cod_cliente =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
@@ -172,22 +202,35 @@ namespace RUSO
 				actualizarbtn.Enabled = true;
 				ingresarbtn.Enabled = false;
 				eliminarbtn.Enabled = false;
-				textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-				textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-				textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+				nom1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+				nom2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+				apel1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+				apel2.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+				dpi.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+				comboBox1.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+				dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+				dir.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
 			}
 			else { MessageBox.Show("Porfavor Seleccione un registro de la tabla"); }
 		}
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-			string query = "UPDATE Talleres SET encargado ='" + textBox1.Text + "', nombre_taller = '" + textBox2.Text + "', direccion='" + textBox3.Text + "' WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "UPDATE Talleres SET encargado =" + textBox1.Text + ", nombre_taller = " + textBox2.Text + ", direccion=" + textBox3.Text + " WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "UPDATE clientes SET primer_nombre= '"+nom1.Text+"',"+
+			"segundo_nombre='"+nom2.Text+"',primer_apellido='"+apel1.Text+"',segundo_apellido='"+apel2.Text+"',"+
+			"dpi='"+dpi.Text+"',sexo='"+comboBox1.Text+"',fecha_nacimiento='"+dateTimePicker1.Text+"',direccion='"+dir.Text+"'" +
+   "		 WHERE cod_cliente =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+			operacion = "UPDATE clientes SET primer_nombre= " + nom1.Text + "," +
+			"segundo_nombre=" + nom2.Text + ",primer_apellido=" + apel1.Text + ",segundo_apellido=" + apel2.Text + "," +
+			"dpi=" + dpi.Text + ",sexo=" + comboBox1.Text + ",fecha_nacimiento=" + dateTimePicker1.Text + ",direccion=" + dir.Text + "" +
+   "		 WHERE cod_cliente = " + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
 			{
-				if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "")
+				if (nom1.Text != "" && nom2.Text != "" && apel1.Text != "" && comboBox1.Text != "SEXO")
 				{
 					consulta.ExecuteNonQuery();
 					MessageBox.Show("Actualizado");
@@ -195,9 +238,12 @@ namespace RUSO
 					llenartabla();
 					databaseConnection.Open();
 					log(operacion);
-					textBox1.Text = "";
-					textBox2.Text = "";
-					textBox3.Text = "";
+					nom1.Text = "";
+					apel1.Text = "";
+					nom2.Text = "";
+					apel2.Text = "";
+					dpi.Text = "";
+					dir.Text = "";
 					actualizarbtn.Enabled = false;
 					ingresarbtn.Enabled = true;
 					eliminarbtn.Enabled = true;

@@ -144,5 +144,82 @@ namespace RUSO
 			op1.Show();
 			this.Hide();
 		}
+
+		private void button6_MouseHover(object sender, EventArgs e)
+		{
+
+			button6.BackgroundImage = global::RUSO.Properties.Resources.FONDO;
+			button6.Text = "COMPRAS";
+		}
+
+		private void button6_MouseLeave(object sender, EventArgs e)
+		{
+			button6.BackgroundImage = global::RUSO.Properties.Resources.COMPRAS;
+			button6.Text = "";
+		}
+
+		private void button3_MouseHover(object sender, EventArgs e)
+		{
+			button3.BackgroundImage = global::RUSO.Properties.Resources.FONDO;
+			button3.Text = "CLIENTES";
+		}
+
+		private void button3_MouseLeave(object sender, EventArgs e)
+		{
+
+			button3.BackgroundImage = global::RUSO.Properties.Resources.target;
+			button3.Text = "";
+		}
+
+		private void button5_MouseHover(object sender, EventArgs e)
+		{
+			button5.BackgroundImage = global::RUSO.Properties.Resources.FONDO;
+			button5.Text = "EMPLEADOS";
+		}
+
+		private void button5_MouseLeave(object sender, EventArgs e)
+		{
+			button5.BackgroundImage = global::RUSO.Properties.Resources.mechanic;
+			button5.Text = "";
+		}
+
+		private void button7_MouseHover(object sender, EventArgs e)
+		{
+			button7.BackgroundImage = global::RUSO.Properties.Resources.FONDO;
+			button7.Text = "EXPORTADORES";
+
+		}
+
+		private void button7_MouseLeave(object sender, EventArgs e)
+		{
+
+			button7.BackgroundImage = global::RUSO.Properties.Resources.cargo_ship;
+			button7.Text = "";
+		}
+
+		private void button4_MouseHover(object sender, EventArgs e)
+		{
+			button4.BackgroundImage = global::RUSO.Properties.Resources.FONDO;
+			button4.Text = "REPARACIONES";
+		}
+
+		private void button4_MouseLeave(object sender, EventArgs e)
+		{
+			button4.BackgroundImage = global::RUSO.Properties.Resources.car_repair;
+			button4.Text = "";
+		}
+
+		private void button9_MouseHover(object sender, EventArgs e)
+		{
+			button9.BackgroundImage = global::RUSO.Properties.Resources.FONDO;
+			button9.Text = "VENTAS";
+		}
+
+		private void button9_MouseLeave(object sender, EventArgs e)
+		{
+
+			button9.BackgroundImage = global::RUSO.Properties.Resources.bank;
+			button9.Text = "";
+		}
 	}
 }

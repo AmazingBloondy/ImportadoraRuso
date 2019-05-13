@@ -279,7 +279,7 @@
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(120, 22);
 			this.label2.TabIndex = 0;
-			this.label2.Text = "Encargado";
+			this.label2.Text = "Nombre";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			// 
 			// label3
@@ -292,7 +292,7 @@
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(120, 22);
 			this.label3.TabIndex = 1;
-			this.label3.Text = "Nombre";
+			this.label3.Text = "Pais";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			// 
 			// label4
@@ -305,7 +305,7 @@
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(120, 22);
 			this.label4.TabIndex = 2;
-			this.label4.Text = "Direccion";
+			this.label4.Text = "Sitio Web";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			// 
 			// textBox1

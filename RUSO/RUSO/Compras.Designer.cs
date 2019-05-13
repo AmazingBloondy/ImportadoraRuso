@@ -44,12 +44,19 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
 			this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+			this.comboBox3 = new System.Windows.Forms.ComboBox();
+			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
 			this.ingresarbtn = new System.Windows.Forms.Button();
 			this.actualizarbtn = new System.Windows.Forms.Button();
@@ -248,12 +255,19 @@
 			this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
 			this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel9.Controls.Add(this.comboBox3, 1, 2);
+			this.tableLayoutPanel9.Controls.Add(this.comboBox2, 1, 1);
+			this.tableLayoutPanel9.Controls.Add(this.comboBox1, 1, 0);
 			this.tableLayoutPanel9.Controls.Add(this.label2, 0, 0);
 			this.tableLayoutPanel9.Controls.Add(this.label3, 0, 1);
 			this.tableLayoutPanel9.Controls.Add(this.label4, 0, 2);
-			this.tableLayoutPanel9.Controls.Add(this.textBox1, 1, 0);
-			this.tableLayoutPanel9.Controls.Add(this.textBox2, 1, 1);
-			this.tableLayoutPanel9.Controls.Add(this.textBox3, 1, 2);
+			this.tableLayoutPanel9.Controls.Add(this.dateTimePicker1, 3, 0);
+			this.tableLayoutPanel9.Controls.Add(this.textBox1, 1, 5);
+			this.tableLayoutPanel9.Controls.Add(this.textBox2, 1, 6);
+			this.tableLayoutPanel9.Controls.Add(this.textBox3, 1, 7);
+			this.tableLayoutPanel9.Controls.Add(this.label5, 0, 5);
+			this.tableLayoutPanel9.Controls.Add(this.label6, 0, 6);
+			this.tableLayoutPanel9.Controls.Add(this.label7, 0, 7);
 			this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
 			this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -269,6 +283,37 @@
 			this.tableLayoutPanel9.Size = new System.Drawing.Size(1050, 178);
 			this.tableLayoutPanel9.TabIndex = 3;
 			// 
+			// comboBox3
+			// 
+			this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+			this.comboBox3.FormattingEnabled = true;
+			this.comboBox3.Location = new System.Drawing.Point(129, 47);
+			this.comboBox3.Name = "comboBox3";
+			this.comboBox3.Size = new System.Drawing.Size(330, 25);
+			this.comboBox3.TabIndex = 37;
+			// 
+			// comboBox2
+			// 
+			this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+			this.comboBox2.FormattingEnabled = true;
+			this.comboBox2.Location = new System.Drawing.Point(129, 25);
+			this.comboBox2.Name = "comboBox2";
+			this.comboBox2.Size = new System.Drawing.Size(330, 25);
+			this.comboBox2.TabIndex = 33;
+			// 
+			// comboBox1
+			// 
+			this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Location = new System.Drawing.Point(129, 3);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(330, 25);
+			this.comboBox1.TabIndex = 29;
+			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
@@ -279,8 +324,9 @@
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(120, 22);
 			this.label2.TabIndex = 0;
-			this.label2.Text = "Encargado";
+			this.label2.Text = "Empleado";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.label2.Click += new System.EventHandler(this.label2_Click_1);
 			// 
 			// label3
 			// 
@@ -292,7 +338,7 @@
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(120, 22);
 			this.label3.TabIndex = 1;
-			this.label3.Text = "Nombre";
+			this.label3.Text = "Vehiculo";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			// 
 			// label4
@@ -305,35 +351,84 @@
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(120, 22);
 			this.label4.TabIndex = 2;
-			this.label4.Text = "Direccion";
+			this.label4.Text = "Exportador";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			// 
+			// dateTimePicker1
+			// 
+			this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dateTimePicker1.Location = new System.Drawing.Point(591, 3);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.Size = new System.Drawing.Size(330, 25);
+			this.dateTimePicker1.TabIndex = 38;
 			// 
 			// textBox1
 			// 
 			this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.textBox1.Location = new System.Drawing.Point(129, 3);
+			this.textBox1.Location = new System.Drawing.Point(129, 113);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(330, 25);
-			this.textBox1.TabIndex = 25;
+			this.textBox1.TabIndex = 39;
 			// 
 			// textBox2
 			// 
 			this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.textBox2.Location = new System.Drawing.Point(129, 25);
+			this.textBox2.Location = new System.Drawing.Point(129, 135);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(330, 25);
-			this.textBox2.TabIndex = 26;
+			this.textBox2.TabIndex = 40;
 			// 
 			// textBox3
 			// 
 			this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-			this.textBox3.Location = new System.Drawing.Point(129, 47);
+			this.textBox3.Location = new System.Drawing.Point(129, 157);
 			this.textBox3.Name = "textBox3";
 			this.textBox3.Size = new System.Drawing.Size(330, 25);
-			this.textBox3.TabIndex = 27;
+			this.textBox3.TabIndex = 41;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+			this.label5.ForeColor = System.Drawing.Color.White;
+			this.label5.Location = new System.Drawing.Point(3, 110);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(120, 22);
+			this.label5.TabIndex = 42;
+			this.label5.Text = "Precio Q";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+			this.label6.ForeColor = System.Drawing.Color.White;
+			this.label6.Location = new System.Drawing.Point(3, 132);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(120, 22);
+			this.label6.TabIndex = 43;
+			this.label6.Text = "Precio Total Q";
+			this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+			this.label7.ForeColor = System.Drawing.Color.White;
+			this.label7.Location = new System.Drawing.Point(3, 154);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(120, 24);
+			this.label7.TabIndex = 44;
+			this.label7.Text = "Valor del Dollar";
+			this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			// 
 			// tableLayoutPanel8
 			// 
@@ -532,14 +627,21 @@
 		private System.Windows.Forms.Button eliminarbtn;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Label label27;
 		private System.Windows.Forms.Label label28;
 		private System.Windows.Forms.Button atrasbtn;
 		private System.Windows.Forms.Button salirbtn;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.ComboBox comboBox3;
+		private System.Windows.Forms.ComboBox comboBox2;
+		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label label7;
 	}
 }

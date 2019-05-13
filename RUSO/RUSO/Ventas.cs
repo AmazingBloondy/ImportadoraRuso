@@ -25,6 +25,8 @@ namespace RUSO
 			usuario = user;
 			level = nivel;
 			actualizarbtn.Enabled = false;
+			dateTimePicker1.Format = DateTimePickerFormat.Custom;
+			dateTimePicker1.CustomFormat = "yyyy-MM-dd";
 		}
 
 		void llenartabla()
@@ -32,7 +34,7 @@ namespace RUSO
 
 			MySqlCommand codigo = new MySqlCommand();
 			codigo.Connection = databaseConnection;
-			codigo.CommandText = ("SELECT * FROM talleres");
+			codigo.CommandText = ("SELECT * FROM ventas");
 			try
 			{
 				MySqlDataAdapter ejecutar = new MySqlDataAdapter();
@@ -49,6 +51,85 @@ namespace RUSO
 				MessageBox.Show("ERROR" + e.ToString());
 				databaseConnection.Close();
 			}
+
+			try
+			{
+				empleado.Text = "EMPLEADO";
+				empleado.Items.Clear();
+
+				databaseConnection.Open();
+				MySqlCommand command = new MySqlCommand("SELECT * FROM empleados", databaseConnection);
+				MySqlDataReader reader = command.ExecuteReader();
+				while (reader.Read())
+				{
+					empleado.Refresh();
+					empleado.Items.Add(reader.GetValue(0).ToString()+" - "+reader.GetValue(1).ToString()+" "+reader.GetValue(3).ToString());
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			databaseConnection.Close();
+
+			try
+			{
+				vehiculo.Text = "VEHICULO";
+				vehiculo.Items.Clear();
+
+				databaseConnection.Open();
+				MySqlCommand command = new MySqlCommand("SELECT * FROM vehiculos", databaseConnection);
+				MySqlDataReader reader = command.ExecuteReader();
+				while (reader.Read())
+				{
+					vehiculo.Refresh();
+					vehiculo.Items.Add(reader.GetValue(0).ToString()+" "+reader.GetValue(1).ToString() + " " + reader.GetValue(8).ToString());
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			databaseConnection.Close();
+
+			try
+			{
+				cliente.Text = "CLIENTE";
+				cliente.Items.Clear();
+
+				databaseConnection.Open();
+				MySqlCommand command = new MySqlCommand("SELECT * FROM clientes", databaseConnection);
+				MySqlDataReader reader = command.ExecuteReader();
+				while (reader.Read())
+				{
+					cliente.Refresh();
+					cliente.Items.Add(reader.GetValue(0).ToString()+" "+ reader.GetValue(1).ToString()+" "+ reader.GetValue(2).ToString());
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			databaseConnection.Close();
+			try
+			{
+				pago.Text = "PAGO";
+				pago.Items.Clear();
+
+				databaseConnection.Open();
+				MySqlCommand command = new MySqlCommand("SELECT * FROM formas_pago", databaseConnection);
+				MySqlDataReader reader = command.ExecuteReader();
+				while (reader.Read())
+				{
+					pago.Refresh();
+					pago.Items.Add(reader.GetValue(1).ToString());
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+			databaseConnection.Close();
 		}
 		void log(string queryin)
 		{
@@ -110,21 +191,20 @@ namespace RUSO
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			string query = "INSERT INTO Talleres(encargado, nombre_taller, direccion) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "')";
-			operacion = "INSERT INTO Talleres(encargado, nombre_taller, direccion) VALUES (" + textBox1.Text + "," + textBox2.Text + "," + textBox3.Text + ")";
-
+			string query = "INSERT INTO ventas(cod_empleado, cod_vehiculo, cod_cliente, fecha_venta , forma_pago,  precio_total)" +
+			" VALUES (" + empleado.Text[0] + "," +vehiculo.Text[0] + "," + cliente.Text[0] + ",'" + dateTimePicker1.Text + "','" + pago.Text + "'," + precio.Text + ")";
+			operacion = "INSERT INTO ventas(cod_empleado, cod_vehiculo, cod_cliente, fecha_venta , forma_pago,  precio_total)" +
+			" VALUES (" + empleado.Text[0] + "," + vehiculo.Text[0] + "," + cliente.Text[0] + "," + dateTimePicker1.Text + "," + pago.Text + "," + precio.Text + ")";
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
 			{
-				if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" )
+				if (vehiculo.Text != "VEHICULO" && cliente.Text != "CLIENTE" && precio.Text != "" )
 				{
 					consulta.ExecuteNonQuery();
 					MessageBox.Show("INGRSO CORRECTO");
 					log(operacion);
-					textBox1.Text = "";
-					textBox3.Text = "";
-					textBox2.Text = "";
+					precio.Text = "";
 					databaseConnection.Close();
 					llenartabla();
 
@@ -140,8 +220,8 @@ namespace RUSO
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			string query = "DELETE FROM Talleres  WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "DELETE FROM Talleres  WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "DELETE FROM ventas  WHERE  cod_venta =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			operacion = "DELETE FROM ventas  WHERE  cod_venta =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
@@ -172,22 +252,31 @@ namespace RUSO
 				actualizarbtn.Enabled = true;
 				ingresarbtn.Enabled = false;
 				eliminarbtn.Enabled = false;
-				textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-				textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-				textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+				empleado.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+				vehiculo.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+				cliente.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+				pago.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+				dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+				precio.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+				
+
 			}
 			else { MessageBox.Show("Porfavor Seleccione un registro de la tabla"); }
 		}
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-			string query = "UPDATE Talleres SET encargado ='" + textBox1.Text + "', nombre_taller = '" + textBox2.Text + "', direccion='" + textBox3.Text + "' WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "UPDATE Talleres SET encargado =" + textBox1.Text + ", nombre_taller = " + textBox2.Text + ", direccion=" + textBox3.Text + " WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "UPDATE ventas SET cod_empleado= "+empleado.Text[0]+", cod_vehiculo="+ vehiculo.Text[0]+
+				", cod_cliente=" + cliente.Text[0] + ",fecha_venta='" +dateTimePicker1.Text+"',forma_pago='"+pago.Text+"',precio_total="+precio.Text+""+
+				" WHERE cod_venta="+dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			operacion = "UPDATE ventas SET cod_empleado= " + empleado.Text[0] + ", cod_vehiculo=" + vehiculo.Text[0] +
+				", cod_cliente=" + cliente.Text[0] + ",fecha_venta=" + dateTimePicker1.Text + ",forma_pago=" + pago.Text + ",precio_total=" + precio.Text + "" +
+				" WHERE cod_venta=" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
 			{
-				if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "")
+				if (vehiculo.Text != "VEHICULO" && cliente.Text != "CLIENTE" && precio.Text != "")
 				{
 					consulta.ExecuteNonQuery();
 					MessageBox.Show("Actualizado");
@@ -195,9 +284,7 @@ namespace RUSO
 					llenartabla();
 					databaseConnection.Open();
 					log(operacion);
-					textBox1.Text = "";
-					textBox2.Text = "";
-					textBox3.Text = "";
+					precio.Text = "";
 					actualizarbtn.Enabled = false;
 					ingresarbtn.Enabled = true;
 					eliminarbtn.Enabled = true;
@@ -210,6 +297,11 @@ namespace RUSO
 				MessageBox.Show("\tERROR!!\nVerifique:\n-Codigo no repetido.\n-Dpi No repetido.\n\tGRACIAS!!" + ex.ToString());
 				databaseConnection.Close();
 			}
+		}
+
+		private void label2_Click_1(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

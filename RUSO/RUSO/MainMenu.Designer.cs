@@ -159,82 +159,102 @@
 			// button3
 			// 
 			this.button3.BackColor = System.Drawing.Color.Gold;
+			this.button3.BackgroundImage = global::RUSO.Properties.Resources.target;
+			this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.button3.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
 			this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
 			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button3.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.button3.Location = new System.Drawing.Point(3, 129);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(331, 120);
 			this.button3.TabIndex = 2;
-			this.button3.Text = "button3";
 			this.button3.UseVisualStyleBackColor = false;
 			this.button3.Click += new System.EventHandler(this.button3_Click);
+			this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
+			this.button3.MouseHover += new System.EventHandler(this.button3_MouseHover);
 			// 
 			// button4
 			// 
 			this.button4.BackColor = System.Drawing.Color.Gold;
+			this.button4.BackgroundImage = global::RUSO.Properties.Resources.car_repair;
+			this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.button4.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
 			this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
 			this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button4.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.button4.Location = new System.Drawing.Point(3, 255);
 			this.button4.Name = "button4";
 			this.button4.Size = new System.Drawing.Size(331, 120);
 			this.button4.TabIndex = 3;
-			this.button4.Text = "button4";
 			this.button4.UseVisualStyleBackColor = false;
 			this.button4.Click += new System.EventHandler(this.button4_Click);
+			this.button4.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
+			this.button4.MouseHover += new System.EventHandler(this.button4_MouseHover);
 			// 
 			// button5
 			// 
 			this.button5.BackColor = System.Drawing.Color.Gold;
+			this.button5.BackgroundImage = global::RUSO.Properties.Resources.mechanic;
+			this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.button5.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
 			this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
 			this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button5.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.button5.Location = new System.Drawing.Point(340, 129);
 			this.button5.Name = "button5";
 			this.button5.Size = new System.Drawing.Size(331, 120);
 			this.button5.TabIndex = 4;
-			this.button5.Text = "button5";
 			this.button5.UseVisualStyleBackColor = false;
 			this.button5.Click += new System.EventHandler(this.button5_Click);
+			this.button5.MouseLeave += new System.EventHandler(this.button5_MouseLeave);
+			this.button5.MouseHover += new System.EventHandler(this.button5_MouseHover);
 			// 
 			// button6
 			// 
 			this.button6.BackColor = System.Drawing.Color.Gold;
+			this.button6.BackgroundImage = global::RUSO.Properties.Resources.COMPRAS;
+			this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.button6.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
 			this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
 			this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button6.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.button6.Location = new System.Drawing.Point(677, 3);
 			this.button6.Name = "button6";
 			this.button6.Size = new System.Drawing.Size(331, 120);
 			this.button6.TabIndex = 5;
-			this.button6.Text = "button6";
 			this.button6.UseVisualStyleBackColor = false;
 			this.button6.Click += new System.EventHandler(this.button6_Click);
+			this.button6.MouseLeave += new System.EventHandler(this.button6_MouseLeave);
+			this.button6.MouseHover += new System.EventHandler(this.button6_MouseHover);
 			// 
 			// button7
 			// 
 			this.button7.BackColor = System.Drawing.Color.Gold;
+			this.button7.BackgroundImage = global::RUSO.Properties.Resources.cargo_ship;
+			this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.button7.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
 			this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
 			this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button7.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.button7.Location = new System.Drawing.Point(677, 129);
 			this.button7.Name = "button7";
 			this.button7.Size = new System.Drawing.Size(331, 120);
 			this.button7.TabIndex = 6;
-			this.button7.Text = "button7";
 			this.button7.UseVisualStyleBackColor = false;
 			this.button7.Click += new System.EventHandler(this.button7_Click);
+			this.button7.MouseLeave += new System.EventHandler(this.button7_MouseLeave);
+			this.button7.MouseHover += new System.EventHandler(this.button7_MouseHover);
 			// 
 			// button8
 			// 
@@ -244,6 +264,7 @@
 			this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
 			this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button8.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.button8.Location = new System.Drawing.Point(677, 255);
 			this.button8.Name = "button8";
 			this.button8.Size = new System.Drawing.Size(331, 120);
@@ -255,18 +276,22 @@
 			// button9
 			// 
 			this.button9.BackColor = System.Drawing.Color.Gold;
+			this.button9.BackgroundImage = global::RUSO.Properties.Resources.bank;
+			this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.button9.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
 			this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
 			this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
 			this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button9.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
 			this.button9.Location = new System.Drawing.Point(340, 255);
 			this.button9.Name = "button9";
 			this.button9.Size = new System.Drawing.Size(331, 120);
 			this.button9.TabIndex = 8;
-			this.button9.Text = "button9";
 			this.button9.UseVisualStyleBackColor = false;
 			this.button9.Click += new System.EventHandler(this.button9_Click);
+			this.button9.MouseLeave += new System.EventHandler(this.button9_MouseLeave);
+			this.button9.MouseHover += new System.EventHandler(this.button9_MouseHover);
 			// 
 			// tableLayoutPanel4
 			// 

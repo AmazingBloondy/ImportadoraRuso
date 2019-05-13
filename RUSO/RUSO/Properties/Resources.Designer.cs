@@ -73,6 +73,16 @@ namespace RUSO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bank {
+            get {
+                object obj = ResourceManager.GetObject("bank", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap banner {
             get {
                 object obj = ResourceManager.GetObject("banner", resourceCulture);
@@ -93,6 +103,56 @@ namespace RUSO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap car_repair {
+            get {
+                object obj = ResourceManager.GetObject("car-repair", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap car_repair1 {
+            get {
+                object obj = ResourceManager.GetObject("car-repair1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cargo_ship {
+            get {
+                object obj = ResourceManager.GetObject("cargo-ship", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap COMPRAS {
+            get {
+                object obj = ResourceManager.GetObject("COMPRAS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap COMPRAS1 {
+            get {
+                object obj = ResourceManager.GetObject("COMPRAS1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FONDO {
             get {
                 object obj = ResourceManager.GetObject("FONDO", resourceCulture);
@@ -106,6 +166,26 @@ namespace RUSO.Properties {
         internal static System.Drawing.Bitmap LOGO {
             get {
                 object obj = ResourceManager.GetObject("LOGO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mechanic {
+            get {
+                object obj = ResourceManager.GetObject("mechanic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mechanic1 {
+            get {
+                object obj = ResourceManager.GetObject("mechanic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +246,16 @@ namespace RUSO.Properties {
         internal static System.Drawing.Bitmap tap1 {
             get {
                 object obj = ResourceManager.GetObject("tap1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap target {
+            get {
+                object obj = ResourceManager.GetObject("target", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
