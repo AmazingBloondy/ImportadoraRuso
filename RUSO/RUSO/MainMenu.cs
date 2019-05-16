@@ -107,8 +107,10 @@ namespace RUSO
 
 		private void button8_Click(object sender, EventArgs e)
 		{
-		
-		}
+            LOG op1 = new LOG(usuario, level);
+            op1.Show();
+            this.Hide();
+        }
 
 		private void button3_Click(object sender, EventArgs e)
 		{
