@@ -61,3 +61,4 @@ C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Vehiculo.resourc
 C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Taller.resources
 C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Properties.Resources.resources
 C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.csproj.GenerateResource.Cache
+C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Marcas.resources
