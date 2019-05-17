@@ -1,7 +1,7 @@
 ﻿namespace RUSO
 {
-	partial class Reparaciones
-	{
+	partial class Documentos
+    {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reparaciones));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Documentos));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -47,17 +47,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.vehiculo = new System.Windows.Forms.ComboBox();
-            this.estado = new System.Windows.Forms.ComboBox();
-            this.detalles = new System.Windows.Forms.TextBox();
-            this.precio = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.taller = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txtProp = new System.Windows.Forms.TextBox();
+            this.txtCirc = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.ingresarbtn = new System.Windows.Forms.Button();
             this.actualizarbtn = new System.Windows.Forms.Button();
@@ -67,6 +58,9 @@
             this.modificarbtn = new System.Windows.Forms.Button();
             this.eliminarbtn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.vehiculo = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPlaca = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -227,7 +221,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(627, 73);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Reparaciones";
+            this.label1.Text = "Documentos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tableLayoutPanel3
@@ -259,17 +253,11 @@
             this.tableLayoutPanel9.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel9.Controls.Add(this.txtProp, 1, 1);
+            this.tableLayoutPanel9.Controls.Add(this.txtCirc, 1, 2);
             this.tableLayoutPanel9.Controls.Add(this.vehiculo, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.estado, 1, 2);
-            this.tableLayoutPanel9.Controls.Add(this.detalles, 1, 3);
-            this.tableLayoutPanel9.Controls.Add(this.precio, 1, 4);
             this.tableLayoutPanel9.Controls.Add(this.label5, 0, 3);
-            this.tableLayoutPanel9.Controls.Add(this.label6, 0, 4);
-            this.tableLayoutPanel9.Controls.Add(this.label8, 2, 1);
-            this.tableLayoutPanel9.Controls.Add(this.label9, 2, 2);
-            this.tableLayoutPanel9.Controls.Add(this.taller, 1, 1);
-            this.tableLayoutPanel9.Controls.Add(this.dateTimePicker1, 3, 1);
-            this.tableLayoutPanel9.Controls.Add(this.dateTimePicker2, 3, 2);
+            this.tableLayoutPanel9.Controls.Add(this.txtPlaca, 1, 3);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -309,7 +297,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 22);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Taller";
+            this.label3.Text = "# Titulo Prop.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label4
@@ -322,127 +310,26 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 22);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Estado";
+            this.label4.Text = "# Tarjeta Circ.";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // vehiculo
+            // txtProp
             // 
-            this.vehiculo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vehiculo.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.vehiculo.FormattingEnabled = true;
-            this.vehiculo.Location = new System.Drawing.Point(129, 3);
-            this.vehiculo.Name = "vehiculo";
-            this.vehiculo.Size = new System.Drawing.Size(330, 25);
-            this.vehiculo.TabIndex = 27;
-            this.vehiculo.SelectedIndexChanged += new System.EventHandler(this.vehiculo_SelectedIndexChanged);
+            this.txtProp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtProp.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtProp.Location = new System.Drawing.Point(129, 25);
+            this.txtProp.Name = "txtProp";
+            this.txtProp.Size = new System.Drawing.Size(330, 25);
+            this.txtProp.TabIndex = 26;
             // 
-            // estado
+            // txtCirc
             // 
-            this.estado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.estado.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.estado.FormattingEnabled = true;
-            this.estado.Location = new System.Drawing.Point(129, 47);
-            this.estado.Name = "estado";
-            this.estado.Size = new System.Drawing.Size(330, 25);
-            this.estado.TabIndex = 28;
-            // 
-            // detalles
-            // 
-            this.detalles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.detalles.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.detalles.Location = new System.Drawing.Point(129, 69);
-            this.detalles.Name = "detalles";
-            this.detalles.Size = new System.Drawing.Size(330, 25);
-            this.detalles.TabIndex = 29;
-            // 
-            // precio
-            // 
-            this.precio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.precio.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.precio.Location = new System.Drawing.Point(129, 91);
-            this.precio.Name = "precio";
-            this.precio.Size = new System.Drawing.Size(330, 25);
-            this.precio.TabIndex = 30;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 66);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 22);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Detalles";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 88);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 22);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Precio";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(465, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 22);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "Inicio";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(465, 44);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 22);
-            this.label9.TabIndex = 39;
-            this.label9.Text = "Fin";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // taller
-            // 
-            this.taller.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taller.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.taller.FormattingEnabled = true;
-            this.taller.Location = new System.Drawing.Point(129, 25);
-            this.taller.Name = "taller";
-            this.taller.Size = new System.Drawing.Size(330, 25);
-            this.taller.TabIndex = 40;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.dateTimePicker1.Location = new System.Drawing.Point(591, 25);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(330, 25);
-            this.dateTimePicker1.TabIndex = 41;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.dateTimePicker2.Location = new System.Drawing.Point(591, 47);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(330, 25);
-            this.dateTimePicker2.TabIndex = 42;
+            this.txtCirc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCirc.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtCirc.Location = new System.Drawing.Point(129, 47);
+            this.txtCirc.Name = "txtCirc";
+            this.txtCirc.Size = new System.Drawing.Size(330, 25);
+            this.txtCirc.TabIndex = 27;
             // 
             // tableLayoutPanel8
             // 
@@ -531,7 +418,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1022, 249);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tableLayoutPanel6
             // 
@@ -589,7 +475,38 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Reparaciones
+            // vehiculo
+            // 
+            this.vehiculo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vehiculo.FormattingEnabled = true;
+            this.vehiculo.Location = new System.Drawing.Point(129, 3);
+            this.vehiculo.Name = "vehiculo";
+            this.vehiculo.Size = new System.Drawing.Size(330, 21);
+            this.vehiculo.TabIndex = 28;
+            this.vehiculo.SelectedIndexChanged += new System.EventHandler(this.vehiculo_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(3, 66);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 22);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Placa";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtPlaca
+            // 
+            this.txtPlaca.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPlaca.Location = new System.Drawing.Point(129, 69);
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(330, 20);
+            this.txtPlaca.TabIndex = 30;
+            // 
+            // Documentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -598,12 +515,12 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Reparaciones";
+            this.Name = "Documentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reparaciones";
+            this.Text = "Documentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Reparaciones_FormClosed);
-            this.Load += new System.EventHandler(this.Reparaciones_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Documentos_FormClosed);
+            this.Load += new System.EventHandler(this.Documentos_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -642,22 +559,16 @@
 		private System.Windows.Forms.Button eliminarbtn;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox txtProp;
 		private System.Windows.Forms.Label label27;
 		private System.Windows.Forms.Label label28;
 		private System.Windows.Forms.Button atrasbtn;
 		private System.Windows.Forms.Button salirbtn;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.ComboBox vehiculo;
-		private System.Windows.Forms.ComboBox estado;
-		private System.Windows.Forms.TextBox detalles;
-		private System.Windows.Forms.TextBox precio;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.ComboBox taller;
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
-		private System.Windows.Forms.DateTimePicker dateTimePicker2;
-	}
+		private System.Windows.Forms.TextBox txtCirc;
+        private System.Windows.Forms.ComboBox vehiculo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtPlaca;
+    }
 }
