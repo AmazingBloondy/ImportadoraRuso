@@ -104,6 +104,12 @@
     <Compile Include="Documentos.Designer.cs">
       <DependentUpon>Documentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormasPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormasPago.Designer.cs">
+      <DependentUpon>FormasPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Puestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Documentos.resx">
       <DependentUpon>Documentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormasPago.resx">
+      <DependentUpon>FormasPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Puestos.resx">
       <DependentUpon>Puestos.cs</DependentUpon>

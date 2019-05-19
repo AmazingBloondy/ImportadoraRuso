@@ -64,3 +64,4 @@ C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.csproj.GenerateR
 C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Marcas.resources
 C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Documentos.resources
 C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Puestos.resources
+C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.FormasPago.resources
