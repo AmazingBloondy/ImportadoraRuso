@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Correos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Correos.Designer.cs">
+      <DependentUpon>Correos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telefonos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Correos.resx">
+      <DependentUpon>Correos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telefonos.resx">
       <DependentUpon>Telefonos.cs</DependentUpon>
     </EmbeddedResource>

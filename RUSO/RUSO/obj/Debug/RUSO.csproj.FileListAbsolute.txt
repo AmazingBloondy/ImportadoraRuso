@@ -66,3 +66,4 @@ C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Documentos.resou
 C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Puestos.resources
 C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.FormasPago.resources
 C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Telefonos.resources
+C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Correos.resources
