@@ -1,6 +1,6 @@
 ﻿namespace RUSO
 {
-	partial class Documentos
+	partial class Telefonos
     {
 		/// <summary>
 		/// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Documentos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telefonos));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -47,11 +47,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtProp = new System.Windows.Forms.TextBox();
-            this.txtCirc = new System.Windows.Forms.TextBox();
-            this.vehiculo = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtPlaca = new System.Windows.Forms.TextBox();
+            this.txtTel = new System.Windows.Forms.TextBox();
+            this.txtProp = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.ingresarbtn = new System.Windows.Forms.Button();
             this.actualizarbtn = new System.Windows.Forms.Button();
@@ -61,6 +58,7 @@
             this.modificarbtn = new System.Windows.Forms.Button();
             this.eliminarbtn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txtNombre = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -221,7 +219,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(627, 73);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Documentos";
+            this.label1.Text = "Teléfonos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tableLayoutPanel3
@@ -253,11 +251,9 @@
             this.tableLayoutPanel9.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel9.Controls.Add(this.txtProp, 1, 1);
-            this.tableLayoutPanel9.Controls.Add(this.txtCirc, 1, 2);
-            this.tableLayoutPanel9.Controls.Add(this.vehiculo, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.label5, 0, 3);
-            this.tableLayoutPanel9.Controls.Add(this.txtPlaca, 1, 3);
+            this.tableLayoutPanel9.Controls.Add(this.txtTel, 1, 2);
+            this.tableLayoutPanel9.Controls.Add(this.txtProp, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.txtNombre, 1, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -283,7 +279,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 22);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Vehiculo";
+            this.label2.Text = "Propietario";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
@@ -297,7 +293,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 22);
             this.label3.TabIndex = 1;
-            this.label3.Text = "# Titulo Prop.";
+            this.label3.Text = "Nombre";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label4
@@ -310,57 +306,31 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 22);
             this.label4.TabIndex = 2;
-            this.label4.Text = "# Tarjeta Circ.";
+            this.label4.Text = "Teléfono";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtTel
+            // 
+            this.txtTel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTel.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtTel.Location = new System.Drawing.Point(129, 47);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(330, 25);
+            this.txtTel.TabIndex = 27;
             // 
             // txtProp
             // 
             this.txtProp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProp.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.txtProp.Location = new System.Drawing.Point(129, 25);
+            this.txtProp.FormattingEnabled = true;
+            this.txtProp.Items.AddRange(new object[] {
+            "Empleados",
+            "Talleres",
+            "Clientes"});
+            this.txtProp.Location = new System.Drawing.Point(129, 3);
             this.txtProp.Name = "txtProp";
-            this.txtProp.Size = new System.Drawing.Size(330, 25);
-            this.txtProp.TabIndex = 26;
-            // 
-            // txtCirc
-            // 
-            this.txtCirc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCirc.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.txtCirc.Location = new System.Drawing.Point(129, 47);
-            this.txtCirc.Name = "txtCirc";
-            this.txtCirc.Size = new System.Drawing.Size(330, 25);
-            this.txtCirc.TabIndex = 27;
-            // 
-            // vehiculo
-            // 
-            this.vehiculo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vehiculo.FormattingEnabled = true;
-            this.vehiculo.Location = new System.Drawing.Point(129, 3);
-            this.vehiculo.Name = "vehiculo";
-            this.vehiculo.Size = new System.Drawing.Size(330, 21);
-            this.vehiculo.TabIndex = 28;
-            this.vehiculo.SelectedIndexChanged += new System.EventHandler(this.vehiculo_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 66);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 22);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Placa";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtPlaca
-            // 
-            this.txtPlaca.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPlaca.Location = new System.Drawing.Point(129, 69);
-            this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(330, 20);
-            this.txtPlaca.TabIndex = 30;
+            this.txtProp.Size = new System.Drawing.Size(330, 21);
+            this.txtProp.TabIndex = 28;
+            this.txtProp.SelectedIndexChanged += new System.EventHandler(this.txtProp_SelectedIndexChanged);
             // 
             // tableLayoutPanel8
             // 
@@ -506,7 +476,16 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Documentos
+            // txtNombre
+            // 
+            this.txtNombre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNombre.FormattingEnabled = true;
+            this.txtNombre.Location = new System.Drawing.Point(129, 25);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(330, 21);
+            this.txtNombre.TabIndex = 29;
+            // 
+            // Telefonos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -515,12 +494,12 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Documentos";
+            this.Name = "Telefonos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Documentos";
+            this.Text = "Telefonos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Documentos_FormClosed);
-            this.Load += new System.EventHandler(this.Documentos_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Telefonos_FormClosed);
+            this.Load += new System.EventHandler(this.Telefonos_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -559,16 +538,14 @@
 		private System.Windows.Forms.Button eliminarbtn;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox txtProp;
 		private System.Windows.Forms.Label label27;
 		private System.Windows.Forms.Label label28;
 		private System.Windows.Forms.Button atrasbtn;
 		private System.Windows.Forms.Button salirbtn;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox txtCirc;
-        private System.Windows.Forms.ComboBox vehiculo;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPlaca;
+		private System.Windows.Forms.TextBox txtTel;
+        private System.Windows.Forms.ComboBox txtProp;
+        private System.Windows.Forms.ComboBox txtNombre;
     }
 }

@@ -107,7 +107,7 @@ namespace RUSO
 
 		private void button8_Click(object sender, EventArgs e)
 		{
-            FormasPago op1 = new FormasPago(usuario, level);
+            Telefonos op1 = new Telefonos(usuario, level);
             op1.Show();
             this.Hide();
         }
