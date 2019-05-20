@@ -242,20 +242,26 @@ namespace RUSO
 				dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
 				estado.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 				detalles.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-				precio.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-				
-
+				precio.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();				
 			}
 			else { MessageBox.Show("Porfavor Seleccione un registro de la tabla"); }
 		}
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-            string query = "UPDATE reparaciones SET cod_vehiculo= " + vehiculo.Text[0] + ", cod_taller= " + taller.Text[0] +
+            string auxve = vehiculo.Text;
+            string[] separarve;
+            separarve = auxve.Split(' ');
+
+            string auxta = taller.Text;
+            string[] separarta;
+            separarta = auxta.Split(' ');
+
+            string query = "UPDATE reparaciones SET cod_vehiculo= " + separarve[0] + ", cod_taller= " + separarta[0] +
                 ", fecha_entrega='" + dateTimePicker1.Text + "',fecha_devolucion='" + dateTimePicker2.Text + "',estado='"
                 + estado.Text + "',detalles='" + detalles.Text + "',precio_total=" + precio.Text + "" +
                 " WHERE cod_reparacion=" + codaux; //+dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            operacion = "UPDATE reparaciones SET cod_vehiculo= " + vehiculo.Text[0] + ", cod_taller= " + taller.Text[0] +
+            operacion = "UPDATE reparaciones SET cod_vehiculo= " + separarve[0] + ", cod_taller= " + separarta[0] +
                 ", fecha_entrega=" + dateTimePicker1.Text + ",fecha_devolucion=" + dateTimePicker2.Text + ",estado="
                 + estado.Text + ",detalles=" + detalles.Text + ",precio_total=" + precio.Text + "" +
                 " WHERE cod_reparacion=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();

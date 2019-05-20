@@ -267,11 +267,23 @@ namespace RUSO
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-            string query = "UPDATE ventas SET cod_empleado= " + empleado.Text[0] + ", cod_vehiculo=" + vehiculo.Text[0] +
-                ", cod_cliente=" + cliente.Text[0] + ",fecha_venta='" + dateTimePicker1.Text + "',forma_pago='" + pago.Text + "',precio_total=" + precio.Text + "" +
+            string auxem = empleado.Text;
+            string[] separarem;
+            separarem = auxem.Split(' ');
+
+            string auxve = vehiculo.Text;
+            string[] separarve;
+            separarve = auxve.Split(' ');
+
+            string auxcl = cliente.Text;
+            string[] separarcl;
+            separarcl = auxcl.Split(' ');
+
+            string query = "UPDATE ventas SET cod_empleado= " + separarem[0] + ", cod_vehiculo=" + separarve[0] +
+                ", cod_cliente=" + separarcl[0] + ",fecha_venta='" + dateTimePicker1.Text + "',forma_pago='" + pago.Text + "',precio_total=" + precio.Text + "" +
                 " WHERE cod_venta=" + codaux; //+dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            operacion = "UPDATE ventas SET cod_empleado= " + empleado.Text[0] + ", cod_vehiculo=" + vehiculo.Text[0] +
-                ", cod_cliente=" + cliente.Text[0] + ",fecha_venta=" + dateTimePicker1.Text + ",forma_pago=" + pago.Text + ",precio_total=" + precio.Text + "" +
+            operacion = "UPDATE ventas SET cod_empleado= " + separarem[0] + ", cod_vehiculo=" + separarve[0] +
+                ", cod_cliente=" + separarcl[0] + ",fecha_venta=" + dateTimePicker1.Text + ",forma_pago=" + pago.Text + ",precio_total=" + precio.Text + "" +
                 " WHERE cod_venta=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);

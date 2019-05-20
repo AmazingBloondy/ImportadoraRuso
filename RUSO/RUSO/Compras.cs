@@ -252,9 +252,17 @@ namespace RUSO
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-            string query = "UPDATE compras SET cod_empleado =" + comboBox1.Text[0] + ", cod_vehiculo = " + comboBox2.Text[0] + ", exportador='" + comboBox3.Text + "'," +
+            string auxem = comboBox1.Text;
+            string[] separarem;
+            separarem = auxem.Split(' ');
+
+            string auxve = comboBox2.Text;
+            string[] separarve;
+            separarve = auxve.Split(' ');            
+
+            string query = "UPDATE compras SET cod_empleado =" + separarem[0] + ", cod_vehiculo = " + separarve[0] + ", exportador='" + comboBox3.Text + "'," +
             " fecha_compra= '" + dateTimePicker1.Text + "', precio_vehiculo_quetzales=" + textBox1.Text + ", precio_total_quetzales=" + textBox2.Text + ", precio_dolar='" + textBox3.Text + "' WHERE  cod_compra =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            operacion = "UPDATE compras SET cod_empleado =" + comboBox1.Text[0] + ", cod_vehiculo = " + comboBox2.Text[0] + ", exportador=" + comboBox3.Text + "," +
+            operacion = "UPDATE compras SET cod_empleado =" + separarem[0] + ", cod_vehiculo = " + separarve[0] + ", exportador=" + comboBox3.Text + "," +
             " fecha_compra= " + dateTimePicker1.Text + ", precio_vehiculo_quetzales=" + textBox1.Text + ", precio_total_quetzales=" + textBox2.Text + ", precio_dolar=" + textBox3.Text + " WHERE  cod_compra =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
