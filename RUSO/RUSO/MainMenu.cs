@@ -223,5 +223,47 @@ namespace RUSO
 			button9.BackgroundImage = global::RUSO.Properties.Resources.bank;
 			button9.Text = "";
 		}
-	}
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            Marcas op1 = new Marcas(usuario, level);
+            op1.Show();
+            this.Hide();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Documentos op1 = new Documentos(usuario, level);
+            op1.Show();
+            this.Hide();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Correos op1 = new Correos(usuario, level);
+            op1.Show();
+            this.Hide();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Puestos op1 = new Puestos(usuario, level);
+            op1.Show();
+            this.Hide();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            FormasPago op1 = new FormasPago(usuario, level);
+            op1.Show();
+            this.Hide();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Telefonos op1 = new Telefonos(usuario, level);
+            op1.Show();
+            this.Hide();
+        }
+    }
 }
