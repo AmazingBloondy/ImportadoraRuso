@@ -185,7 +185,7 @@ namespace RUSO
                 databaseConnection.Close();
             }
         }
-
+        string codaux;
 		private void button3_Click(object sender, EventArgs e)
 		{
             if (dataGridView1.SelectedRows.Count == 1)
@@ -193,6 +193,7 @@ namespace RUSO
                 actualizarbtn.Enabled = true;
                 ingresarbtn.Enabled = false;
                 eliminarbtn.Enabled = false;
+                codaux = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 txtProp.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 txtNombre.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 txtCorreo.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();                
@@ -203,9 +204,9 @@ namespace RUSO
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
             string query = "UPDATE Correos SET propietario= '" + txtProp.Text + "', nombre='" + txtNombre.Text +
-                "', correo='" + txtCorreo.Text + "'" + " WHERE cod_correo=" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                "', correo='" + txtCorreo.Text + "'" + " WHERE cod_correo=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             operacion = "UPDATE Correos SET propietario= " + txtProp.Text + ", nombre=" + txtNombre.Text +
-                ", correo=" + txtCorreo.Text + "" + " WHERE cod_correo=" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                ", correo=" + txtCorreo.Text + "" + " WHERE cod_correo=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
             MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
             try

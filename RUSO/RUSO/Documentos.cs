@@ -186,7 +186,7 @@ namespace RUSO
                 databaseConnection.Close();
             }
         }
-
+        string codaux;
 		private void button3_Click(object sender, EventArgs e)
 		{
             if (dataGridView1.SelectedRows.Count == 1)
@@ -194,6 +194,7 @@ namespace RUSO
                 actualizarbtn.Enabled = true;
                 ingresarbtn.Enabled = false;
                 eliminarbtn.Enabled = false;
+                codaux = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 vehiculo.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 txtProp.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 txtCirc.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
@@ -205,9 +206,9 @@ namespace RUSO
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
             string query = "UPDATE Documentos SET cod_vehiculo= " + vehiculo.Text + ", num_titulo=" + txtProp.Text +
-                ", num_tarjeta='" + txtCirc.Text + "', placa='" + txtPlaca.Text + "" + " WHERE cod_documento=" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                ", num_tarjeta='" + txtCirc.Text + "', placa='" + txtPlaca.Text + "" + " WHERE cod_documento=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             operacion = "UPDATE Documentos SET cod_vehiculo= " + vehiculo.Text + ", num_titulo=" + txtProp.Text +
-                ", num_tarjeta=" + txtCirc.Text + ", placa=" + txtPlaca.Text + "" + " WHERE cod_documento=" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                ", num_tarjeta=" + txtCirc.Text + ", placa=" + txtPlaca.Text + "" + " WHERE cod_documento=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
             MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
             try

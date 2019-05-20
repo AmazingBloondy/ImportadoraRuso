@@ -46,14 +46,13 @@ namespace RUSO
 				dataGridView1.DataSource = datostabla;
 				ejecutar.Update(datostabla);
 				databaseConnection.Close();
-
 			}
 			catch (Exception e)
 			{
 				MessageBox.Show("ERROR" + e.ToString());
 				databaseConnection.Close();
 			}
-
+            string comboaux; 
 			try
 			{
 				vehiculo.Text = "VEHICULO";
@@ -228,7 +227,7 @@ namespace RUSO
 				databaseConnection.Close();
 			}
 		}
-
+        string codaux;
 		private void button3_Click(object sender, EventArgs e)
 		{
 			if (dataGridView1.SelectedRows.Count == 1)
@@ -236,7 +235,8 @@ namespace RUSO
 				actualizarbtn.Enabled = true;
 				ingresarbtn.Enabled = false;
 				eliminarbtn.Enabled = false;
-				vehiculo.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                codaux = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                vehiculo.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
 				taller.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
 				dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
 				dateTimePicker2.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
@@ -251,14 +251,14 @@ namespace RUSO
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-			string query = "UPDATE reparaciones SET cod_vehiculo= "+ vehiculo.Text[0] + ", cod_taller= "+ taller.Text[0]+
-				", fecha_entrega='"+dateTimePicker1.Text+"',fecha_devolucion='"+dateTimePicker2.Text+ "',estado='" 
-                + estado.Text + "',detalles='" + detalles.Text+"',precio_total="+precio.Text+""+
-				" WHERE cod_reparacion="+dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "UPDATE reparaciones SET cod_vehiculo= " + vehiculo.Text[0] + ", cod_taller= " + taller.Text[0] +
+            string query = "UPDATE reparaciones SET cod_vehiculo= " + vehiculo.Text[0] + ", cod_taller= " + taller.Text[0] +
+                ", fecha_entrega='" + dateTimePicker1.Text + "',fecha_devolucion='" + dateTimePicker2.Text + "',estado='"
+                + estado.Text + "',detalles='" + detalles.Text + "',precio_total=" + precio.Text + "" +
+                " WHERE cod_reparacion=" + codaux; //+dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            operacion = "UPDATE reparaciones SET cod_vehiculo= " + vehiculo.Text[0] + ", cod_taller= " + taller.Text[0] +
                 ", fecha_entrega=" + dateTimePicker1.Text + ",fecha_devolucion=" + dateTimePicker2.Text + ",estado="
                 + estado.Text + ",detalles=" + detalles.Text + ",precio_total=" + precio.Text + "" +
-                " WHERE cod_reparacion=" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                " WHERE cod_reparacion=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try

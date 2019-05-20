@@ -49,6 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.txtProp = new System.Windows.Forms.ComboBox();
+            this.txtNombre = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.ingresarbtn = new System.Windows.Forms.Button();
             this.actualizarbtn = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@
             this.modificarbtn = new System.Windows.Forms.Button();
             this.eliminarbtn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtNombre = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -332,6 +332,15 @@
             this.txtProp.TabIndex = 28;
             this.txtProp.SelectedIndexChanged += new System.EventHandler(this.txtProp_SelectedIndexChanged);
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNombre.FormattingEnabled = true;
+            this.txtNombre.Location = new System.Drawing.Point(129, 25);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(330, 21);
+            this.txtNombre.TabIndex = 29;
+            // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 4;
@@ -475,15 +484,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNombre.FormattingEnabled = true;
-            this.txtNombre.Location = new System.Drawing.Point(129, 25);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(330, 21);
-            this.txtNombre.TabIndex = 29;
             // 
             // Telefonos
             // 

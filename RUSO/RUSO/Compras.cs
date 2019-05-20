@@ -230,7 +230,7 @@ namespace RUSO
 				databaseConnection.Close();
 			}
 		}
-
+        string codaux;
 		private void button3_Click(object sender, EventArgs e)
 		{
 			if (dataGridView1.SelectedRows.Count == 1)
@@ -238,7 +238,8 @@ namespace RUSO
 				actualizarbtn.Enabled = true;
 				ingresarbtn.Enabled = false;
 				eliminarbtn.Enabled = false;
-				comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                codaux = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
 				comboBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
 				comboBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
 				dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
@@ -251,10 +252,10 @@ namespace RUSO
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-			string query = "UPDATE compras SET cod_empleado =" + comboBox1.Text[0] + ", cod_vehiculo = " + comboBox2.Text[0] + ", exportador='" + comboBox3.Text + "'," +
-			" fecha_compra= '"+dateTimePicker1.Text+"', precio_vehiculo_quetzales="+textBox1.Text+", precio_total_quetzales="+textBox2.Text+", precio_dolar='"+textBox3.Text+"' WHERE  cod_compra =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "UPDATE compras SET cod_empleado =" + comboBox1.Text[0] + ", cod_vehiculo = " + comboBox2.Text[0] + ", exportador=" + comboBox3.Text + "," +
-            " fecha_compra= " + dateTimePicker1.Text + ", precio_vehiculo_quetzales=" + textBox1.Text + ", precio_total_quetzales=" + textBox2.Text + ", precio_dolar=" + textBox3.Text + " WHERE  cod_compra =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string query = "UPDATE compras SET cod_empleado =" + comboBox1.Text[0] + ", cod_vehiculo = " + comboBox2.Text[0] + ", exportador='" + comboBox3.Text + "'," +
+            " fecha_compra= '" + dateTimePicker1.Text + "', precio_vehiculo_quetzales=" + textBox1.Text + ", precio_total_quetzales=" + textBox2.Text + ", precio_dolar='" + textBox3.Text + "' WHERE  cod_compra =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            operacion = "UPDATE compras SET cod_empleado =" + comboBox1.Text[0] + ", cod_vehiculo = " + comboBox2.Text[0] + ", exportador=" + comboBox3.Text + "," +
+            " fecha_compra= " + dateTimePicker1.Text + ", precio_vehiculo_quetzales=" + textBox1.Text + ", precio_total_quetzales=" + textBox2.Text + ", precio_dolar=" + textBox3.Text + " WHERE  cod_compra =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try

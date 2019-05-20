@@ -162,7 +162,7 @@ namespace RUSO
 				databaseConnection.Close();
 			}
 		}
-
+        string codaux;
 		private void button3_Click(object sender, EventArgs e)
 		{
 			if (dataGridView1.SelectedRows.Count == 1)
@@ -170,15 +170,16 @@ namespace RUSO
 				actualizarbtn.Enabled = true;
 				ingresarbtn.Enabled = false;
 				eliminarbtn.Enabled = false;
-				txtFP.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                codaux = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txtFP.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
 			}
 			else { MessageBox.Show("Porfavor Seleccione un registro de la tabla"); }
 		}
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-			string query = "UPDATE formas_pago SET forma ='" + txtFP.Text + "' WHERE  cod_forma =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "UPDATE formas_pago SET forma =" + txtFP.Text + " WHERE  cod_forma =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string query = "UPDATE formas_pago SET forma ='" + txtFP.Text + "' WHERE  cod_forma =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            operacion = "UPDATE formas_pago SET forma =" + txtFP.Text + " WHERE  cod_forma =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try

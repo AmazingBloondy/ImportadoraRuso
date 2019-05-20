@@ -164,7 +164,7 @@ namespace RUSO
 				databaseConnection.Close();
 			}
 		}
-
+        string codaux;
 		private void button3_Click(object sender, EventArgs e)
 		{
 			if (dataGridView1.SelectedRows.Count == 1)
@@ -172,7 +172,8 @@ namespace RUSO
 				actualizarbtn.Enabled = true;
 				ingresarbtn.Enabled = false;
 				eliminarbtn.Enabled = false;
-				textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                codaux = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
 				textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
 				textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
 			}
@@ -181,8 +182,8 @@ namespace RUSO
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-			string query = "UPDATE Talleres SET encargado ='" + textBox1.Text + "', nombre_taller = '" + textBox2.Text + "', direccion='" + textBox3.Text + "' WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "UPDATE Talleres SET encargado =" + textBox1.Text + ", nombre_taller = " + textBox2.Text + ", direccion=" + textBox3.Text + " WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string query = "UPDATE Talleres SET encargado ='" + textBox1.Text + "', nombre_taller = '" + textBox2.Text + "', direccion='" + textBox3.Text + "' WHERE  cod_taller =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            operacion = "UPDATE Talleres SET encargado =" + textBox1.Text + ", nombre_taller = " + textBox2.Text + ", direccion=" + textBox3.Text + " WHERE  cod_taller =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try

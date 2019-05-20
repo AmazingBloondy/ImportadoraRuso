@@ -208,7 +208,7 @@ namespace RUSO
 				databaseConnection.Close();
 			}
 		}
-
+        string codaux;
 		private void button3_Click(object sender, EventArgs e)
 		{
 			if (dataGridView1.SelectedRows.Count == 1)
@@ -216,7 +216,8 @@ namespace RUSO
 				actualizarbtn.Enabled = true;
 				ingresarbtn.Enabled = false;
 				eliminarbtn.Enabled = false;
-				comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                codaux = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                comboBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
 				modelo.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
 				comboBox2.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
 				millas.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
@@ -224,20 +225,21 @@ namespace RUSO
 				anio.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
 				cc.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
 				color.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-
+                //MessageBox.Show("El codigo tiene: " + codaux);
 			}
 			else { MessageBox.Show("Porfavor Seleccione un registro de la tabla"); }
 		}
 
-		private void actualizarbtn_Click(object sender, EventArgs e)
-		{
-			string query = "UPDATE vehiculos SET marca= '"+comboBox1.Text+"', modelo='"+ modelo.Text+
-				"',transmision='"+comboBox2.Text+"',millas="+millas.Text+",vin='"+vin.Text+"',anio="+anio.Text+",cc='"+cc.Text+"',color='"+color.Text+
-				"' WHERE cod_vehiculo="+dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "UPDATE vehiculos SET marca= " + comboBox1.Text + ", modelo=" + modelo.Text +
-				",transmision=" + comboBox2.Text + ",millas=" + millas.Text + ",vin=" + vin.Text + ",anio=" + anio.Text + ",cc=" + cc.Text +
-				",color=" + color.Text + " WHERE cod_vehiculo=" + dataGridView1.CurrentRow.Cells[0].Value.ToString(); ;
-			databaseConnection.Open();
+        private void actualizarbtn_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE vehiculos SET marca= '" + comboBox1.Text + "', modelo='" + modelo.Text +
+                "',transmision='" + comboBox2.Text + "',millas=" + millas.Text + ",vin='" + vin.Text + "',anio=" + anio.Text + ",cc='" + cc.Text + "',color='" + color.Text +
+                "' WHERE cod_vehiculo=" + codaux;   //dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            operacion = "UPDATE vehiculos SET marca= " + comboBox1.Text + ", modelo=" + modelo.Text +
+                ",transmision=" + comboBox2.Text + ",millas=" + millas.Text + ",vin=" + vin.Text + ",anio=" + anio.Text + ",cc=" + cc.Text +
+                ",color=" + color.Text + " WHERE cod_vehiculo=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString(); ;
+
+            databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
 			{
