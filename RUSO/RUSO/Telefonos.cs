@@ -13,7 +13,7 @@ namespace RUSO
 {
 	public partial class Telefonos : Form
 	{
-		MySqlConnection databaseConnection = new MySqlConnection("datasource = 127.0.0.1; port = 3306; username =root; password =; database =importadora");
+		MySqlConnection databaseConnection = new MySqlConnection("datasource = sql3.freemysqlhosting.net; port = 3306; username =sql3292530; password =KLZjP7E8CZ; database =sql3292530");
 		string usuario;
 		string level;
 		string operacion;
@@ -31,7 +31,7 @@ namespace RUSO
 		{
 			MySqlCommand codigo = new MySqlCommand();
 			codigo.Connection = databaseConnection;
-			codigo.CommandText = ("SELECT * FROM Telefonos");
+			codigo.CommandText = ("SELECT * FROM telefonos");
 			try
 			{
 				MySqlDataAdapter ejecutar = new MySqlDataAdapter();
@@ -132,7 +132,7 @@ namespace RUSO
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-            string query = "INSERT INTO Telefonos (propietario, nombre, telefono)" +
+            string query = "INSERT INTO telefonos (propietario, nombre, telefono)" +
             " VALUES ('" + txtProp.Text + "','" + txtNombre.Text + "'," + txtTel.Text + ")";
             operacion = "INSERT INTO Telefonos (propietario, nombre, telefono)" +
             " VALUES (" + txtProp.Text + "," + txtNombre.Text + "," + txtTel.Text + ")";
@@ -162,7 +162,7 @@ namespace RUSO
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-            string query = "DELETE FROM Telefonos WHERE cod_telefono =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string query = "DELETE FROM telefonos WHERE cod_telefono =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
             operacion = "DELETE FROM Telefonos WHERE cod_telefono =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
             MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
@@ -203,7 +203,7 @@ namespace RUSO
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-            string query = "UPDATE Telefonos SET propietario= '" + txtProp.Text + "', nombre='" + txtNombre.Text +
+            string query = "UPDATE telefonos SET propietario= '" + txtProp.Text + "', nombre='" + txtNombre.Text +
                 "', telefono=" + txtTel.Text + "" + " WHERE cod_telefono=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             operacion = "UPDATE Telefonos SET propietario= " + txtProp.Text + ", nombre=" + txtNombre.Text +
                 ", telefono=" + txtTel.Text + "" + " WHERE cod_telefono=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();

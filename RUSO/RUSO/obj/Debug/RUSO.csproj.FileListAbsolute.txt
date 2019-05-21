@@ -67,3 +67,9 @@ C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Puestos.resource
 C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.FormasPago.resources
 C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Telefonos.resources
 C:\Users\Randy\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Correos.resources
+C:\Users\gganp\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Correos.resources
+C:\Users\gganp\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Telefonos.resources
+C:\Users\gganp\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Marcas.resources
+C:\Users\gganp\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Documentos.resources
+C:\Users\gganp\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.FormasPago.resources
+C:\Users\gganp\Desktop\ImportadoraRuso\RUSO\RUSO\obj\Debug\RUSO.Puestos.resources

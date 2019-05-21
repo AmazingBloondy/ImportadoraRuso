@@ -23,24 +23,6 @@ namespace RUSO
 			label1.Text = user;
 		}
 
-		void log(string queryin)
-		{
-			MySqlConnection databaseConnection = new MySqlConnection("datasource = 127.0.0.1; port = 3306; username =root; password =; database =montreal");
-			string query = "INSERT INTO log (Usuario,operacion,fecha) VALUES ('" + usuario + "','" + queryin + "','" + DateTime.Now.ToString("G") + "')";
-			databaseConnection.Open();
-			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
-			try
-			{
-
-				consulta.ExecuteNonQuery();
-				databaseConnection.Close();
-
-			}
-			catch (Exception ex)
-			{
-	 			databaseConnection.Close();
-			}
-		}
 
 		private void MainMenu_Load(object sender, EventArgs e)
 		{
