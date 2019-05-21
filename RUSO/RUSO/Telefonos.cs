@@ -134,7 +134,7 @@ namespace RUSO
 		{
             string query = "INSERT INTO telefonos (propietario, nombre, telefono)" +
             " VALUES ('" + txtProp.Text + "','" + txtNombre.Text + "'," + txtTel.Text + ")";
-            operacion = "INSERT INTO Telefonos (propietario, nombre, telefono)" +
+            operacion = "INSERT INTO telefonos (propietario, nombre, telefono)" +
             " VALUES (" + txtProp.Text + "," + txtNombre.Text + "," + txtTel.Text + ")";
             databaseConnection.Open();
             MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
@@ -163,7 +163,7 @@ namespace RUSO
 		private void button4_Click(object sender, EventArgs e)
 		{
             string query = "DELETE FROM telefonos WHERE cod_telefono =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            operacion = "DELETE FROM Telefonos WHERE cod_telefono =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            operacion = "DELETE FROM telefonos WHERE cod_telefono =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
             MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
             try
@@ -205,7 +205,7 @@ namespace RUSO
 		{
             string query = "UPDATE telefonos SET propietario= '" + txtProp.Text + "', nombre='" + txtNombre.Text +
                 "', telefono=" + txtTel.Text + "" + " WHERE cod_telefono=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            operacion = "UPDATE Telefonos SET propietario= " + txtProp.Text + ", nombre=" + txtNombre.Text +
+            operacion = "UPDATE telefonos SET propietario= " + txtProp.Text + ", nombre=" + txtNombre.Text +
                 ", telefono=" + txtTel.Text + "" + " WHERE cod_telefono=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
             MySqlCommand consulta = new MySqlCommand(query, databaseConnection);

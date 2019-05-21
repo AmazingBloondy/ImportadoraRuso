@@ -323,9 +323,9 @@
             this.txtProp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtProp.FormattingEnabled = true;
             this.txtProp.Items.AddRange(new object[] {
-            "Empleados",
-            "Talleres",
-            "Clientes"});
+            "empleados",
+            "talleres",
+            "clientes"});
             this.txtProp.Location = new System.Drawing.Point(129, 3);
             this.txtProp.Name = "txtProp";
             this.txtProp.Size = new System.Drawing.Size(330, 21);

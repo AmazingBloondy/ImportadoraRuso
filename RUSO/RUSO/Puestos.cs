@@ -32,7 +32,7 @@ namespace RUSO
 
 			MySqlCommand codigo = new MySqlCommand();
 			codigo.Connection = databaseConnection;
-			codigo.CommandText = ("SELECT * FROM Puestos");
+			codigo.CommandText = ("SELECT * FROM puestos");
 			try
 			{
 				MySqlDataAdapter ejecutar = new MySqlDataAdapter();
@@ -83,7 +83,6 @@ namespace RUSO
 
 		}
 
-
 		private void button5_Click(object sender, EventArgs e)
 		{
 			this.Hide();
@@ -110,8 +109,8 @@ namespace RUSO
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			string query = "INSERT INTO Puestos(puesto) VALUES ('" + txtPuesto.Text + "')";
-			operacion = "INSERT INTO Puestos(puesto) VALUES (" + txtPuesto.Text + ")";
+			string query = "INSERT INTO puestos(puesto) VALUES ('" + txtPuesto.Text + "')";
+			operacion = "INSERT INTO puestos(puesto) VALUES (" + txtPuesto.Text + ")";
 
             databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
@@ -138,8 +137,8 @@ namespace RUSO
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			string query = "DELETE FROM Puestos WHERE cod_puesto =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "DELETE FROM Puestos WHERE cod_puesto =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "DELETE FROM puestos WHERE cod_puesto =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			operacion = "DELETE FROM puestos WHERE cod_puesto =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
@@ -178,8 +177,8 @@ namespace RUSO
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-            string query = "UPDATE Puestos SET puesto ='" + txtPuesto.Text + "' WHERE  cod_puesto =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            operacion = "UPDATE Puestos SET puesto =" + txtPuesto.Text + " WHERE  cod_puesto =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string query = "UPDATE puestos SET puesto ='" + txtPuesto.Text + "' WHERE  cod_puesto =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            operacion = "UPDATE puestos SET puesto =" + txtPuesto.Text + " WHERE  cod_puesto =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try

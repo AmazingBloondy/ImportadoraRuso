@@ -110,8 +110,8 @@ namespace RUSO
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			string query = "INSERT INTO Talleres(encargado, nombre_taller, direccion) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "')";
-			operacion = "INSERT INTO Talleres(encargado, nombre_taller, direccion) VALUES (" + textBox1.Text + "," + textBox2.Text + "," + textBox3.Text + ")";
+			string query = "INSERT INTO talleres(encargado, nombre_taller, direccion) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "')";
+			operacion = "INSERT INTO talleres(encargado, nombre_taller, direccion) VALUES (" + textBox1.Text + "," + textBox2.Text + "," + textBox3.Text + ")";
 
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
@@ -120,7 +120,7 @@ namespace RUSO
 				if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" )
 				{
 					consulta.ExecuteNonQuery();
-					MessageBox.Show("INGRSO CORRECTO");
+					MessageBox.Show("INGRESO CORRECTO");
 					log(operacion);
 					textBox1.Text = "";
 					textBox3.Text = "";
@@ -140,8 +140,8 @@ namespace RUSO
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			string query = "DELETE FROM Talleres  WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "DELETE FROM Talleres  WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "DELETE FROM talleres  WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			operacion = "DELETE FROM talleres  WHERE  cod_taller =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
@@ -154,7 +154,6 @@ namespace RUSO
 					llenartabla();
 					databaseConnection.Open();
 					log(operacion);
-
 				}
 				else { MessageBox.Show("Por favor Seleccione un registro"); databaseConnection.Close(); }
 			}
@@ -182,8 +181,8 @@ namespace RUSO
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-            string query = "UPDATE Talleres SET encargado ='" + textBox1.Text + "', nombre_taller = '" + textBox2.Text + "', direccion='" + textBox3.Text + "' WHERE  cod_taller =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            operacion = "UPDATE Talleres SET encargado =" + textBox1.Text + ", nombre_taller = " + textBox2.Text + ", direccion=" + textBox3.Text + " WHERE  cod_taller =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string query = "UPDATE talleres SET encargado ='" + textBox1.Text + "', nombre_taller = '" + textBox2.Text + "', direccion='" + textBox3.Text + "' WHERE  cod_taller =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            operacion = "UPDATE talleres SET encargado =" + textBox1.Text + ", nombre_taller = " + textBox2.Text + ", direccion=" + textBox3.Text + " WHERE  cod_taller =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
@@ -202,7 +201,6 @@ namespace RUSO
 					actualizarbtn.Enabled = false;
 					ingresarbtn.Enabled = true;
 					eliminarbtn.Enabled = true;
-
 				}
 				else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); databaseConnection.Close(); }
 			}

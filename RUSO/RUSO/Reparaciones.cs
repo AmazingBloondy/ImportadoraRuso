@@ -51,8 +51,7 @@ namespace RUSO
 			{
 				MessageBox.Show("ERROR" + e.ToString());
 				databaseConnection.Close();
-			}
-            string comboaux; 
+			}             
 			try
 			{
 				vehiculo.Text = "VEHICULO";
@@ -184,13 +183,12 @@ namespace RUSO
 				if (detalles.Text != "" && estado.Text != "ESTADO" && precio.Text != "" )
 				{
 					consulta.ExecuteNonQuery();
-					MessageBox.Show("INGRSO CORRECTO");
+					MessageBox.Show("INGRESO CORRECTO");
 					log(operacion);
 					detalles.Text = "";
 					precio.Text = "";
 					databaseConnection.Close();
 					llenartabla();
-
 				}
 				else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); databaseConnection.Close(); }
 			}

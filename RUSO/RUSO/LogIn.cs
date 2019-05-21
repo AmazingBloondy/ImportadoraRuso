@@ -33,6 +33,7 @@ namespace RUSO
 			}
 			catch (Exception ex)
 			{
+                MessageBox.Show("Error! \n\n " + ex.ToString());
 			}
 		}
 		string nivel()
@@ -107,7 +108,7 @@ namespace RUSO
 				}
 				else
 				{
-					MessageBox.Show("INGRSO INCORRECTO");
+					MessageBox.Show("INGRESO INCORRECTO");
 				}
 
 			}

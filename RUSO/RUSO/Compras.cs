@@ -186,7 +186,7 @@ namespace RUSO
 				if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && comboBox1.Text != "EMPLEADOS" && comboBox2.Text != "VEHICULOS" && comboBox3.Text != "EXPORTADOR")
 				{
 					consulta.ExecuteNonQuery();
-					MessageBox.Show("INGRSO CORRECTO");
+					MessageBox.Show("INGRESO CORRECTO");
 					log(operacion);
 					textBox1.Text = "";
 					textBox3.Text = "";
@@ -199,15 +199,15 @@ namespace RUSO
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("\tERROR!!\nVerifique: Los datos.\n\tGRACIAS!!   ");
+				MessageBox.Show("\tERROR!! \n\n " + ex.ToString());
 				databaseConnection.Close();
 			}
 		}
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			string query = "DELETE FROM compras  WHERE  cod_compra =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "DELETE FROM compras  WHERE  cod_compra =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "DELETE FROM compras WHERE cod_compra =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			operacion = "DELETE FROM compras WHERE cod_compra =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
@@ -226,7 +226,7 @@ namespace RUSO
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("ERROR");
+				MessageBox.Show("ERROR" + ex.ToString());
 				databaseConnection.Close();
 			}
 		}
@@ -288,7 +288,7 @@ namespace RUSO
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("\tERROR!!\nVerifique los datos ingresados.\n\tGRACIAS!!" );
+				MessageBox.Show("\tERROR!!\n\n " + ex.ToString());
 				databaseConnection.Close();
 			}
 		}

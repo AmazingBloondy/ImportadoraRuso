@@ -167,7 +167,7 @@ namespace RUSO
 				if (nom1.Text != "" && nom2.Text != "" && apel1.Text != "" && comboBox1.Text != "SEXO")
 				{
 					consulta.ExecuteNonQuery();
-					MessageBox.Show("INGRSO CORRECTO");
+					MessageBox.Show("INGRESO CORRECTO");
 					log(operacion);
 					nom1.Text = "";
 					apel1.Text = "";
@@ -203,7 +203,6 @@ namespace RUSO
 					llenartabla();
 					databaseConnection.Open();
 					log(operacion);
-
 				}
 				else { MessageBox.Show("Por favor Seleccione un registro"); databaseConnection.Close(); }
 			}

@@ -131,9 +131,9 @@ namespace RUSO
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-            string query = "INSERT INTO Documentos(cod_vehiculo, num_titulo, num_tarjeta , placa)" +
+            string query = "INSERT INTO documentos(cod_vehiculo, num_titulo, num_tarjeta , placa)" +
             " VALUES (" + vehiculo.Text[0] + "," + txtProp.Text + ",'" + txtCirc.Text + "','" + txtPlaca.Text + "')";
-            operacion = "INSERT INTO Documentos(cod_vehiculo, num_titulo, num_tarjeta , placa)" +
+            operacion = "INSERT INTO documentos(cod_vehiculo, num_titulo, num_tarjeta , placa)" +
             " VALUES (" + vehiculo.Text[0] + "," + txtProp.Text + "," + txtCirc.Text + "," + txtPlaca.Text + ")";
             databaseConnection.Open();
             MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
@@ -162,8 +162,8 @@ namespace RUSO
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-            string query = "DELETE FROM Documentos WHERE cod_reparacion =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            operacion = "DELETE FROM Documentos WHERE cod_reparacion =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string query = "DELETE FROM documentos WHERE cod_reparacion =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            operacion = "DELETE FROM documentos WHERE cod_reparacion =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
             MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
             try
@@ -205,9 +205,9 @@ namespace RUSO
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-            string query = "UPDATE Documentos SET cod_vehiculo= " + vehiculo.Text + ", num_titulo=" + txtProp.Text +
+            string query = "UPDATE documentos SET cod_vehiculo= " + vehiculo.Text + ", num_titulo=" + txtProp.Text +
                 ", num_tarjeta='" + txtCirc.Text + "', placa='" + txtPlaca.Text + "" + " WHERE cod_documento=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            operacion = "UPDATE Documentos SET cod_vehiculo= " + vehiculo.Text + ", num_titulo=" + txtProp.Text +
+            operacion = "UPDATE documentos SET cod_vehiculo= " + vehiculo.Text + ", num_titulo=" + txtProp.Text +
                 ", num_tarjeta=" + txtCirc.Text + ", placa=" + txtPlaca.Text + "" + " WHERE cod_documento=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
             MySqlCommand consulta = new MySqlCommand(query, databaseConnection);

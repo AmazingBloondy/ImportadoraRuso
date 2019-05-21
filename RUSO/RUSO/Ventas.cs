@@ -137,10 +137,8 @@ namespace RUSO
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
 			{
-
 				consulta.ExecuteNonQuery();
 				databaseConnection.Close();
-
 			}
 			catch (Exception ex)
 			{
@@ -163,7 +161,6 @@ namespace RUSO
 		{
 
 		}
-
 
 		private void button5_Click(object sender, EventArgs e)
 		{
@@ -202,7 +199,7 @@ namespace RUSO
 				if (vehiculo.Text != "VEHICULO" && cliente.Text != "CLIENTE" && precio.Text != "" )
 				{
 					consulta.ExecuteNonQuery();
-					MessageBox.Show("INGRSO CORRECTO");
+					MessageBox.Show("INGRESO CORRECTO");
 					log(operacion);
 					precio.Text = "";
 					databaseConnection.Close();
@@ -220,8 +217,8 @@ namespace RUSO
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			string query = "DELETE FROM ventas  WHERE  cod_venta =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "DELETE FROM ventas  WHERE  cod_venta =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "DELETE FROM ventas WHERE cod_venta =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			operacion = "DELETE FROM ventas WHERE cod_venta =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
@@ -234,7 +231,6 @@ namespace RUSO
 					llenartabla();
 					databaseConnection.Open();
 					log(operacion);
-
 				}
 				else { MessageBox.Show("Por favor Seleccione un registro"); databaseConnection.Close(); }
 			}
@@ -258,9 +254,7 @@ namespace RUSO
 				cliente.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
 				pago.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 				dateTimePicker1.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-				precio.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-				
-
+				precio.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();				
 			}
 			else { MessageBox.Show("Porfavor Seleccione un registro de la tabla"); }
 		}

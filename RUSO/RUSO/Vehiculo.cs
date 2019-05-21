@@ -96,10 +96,8 @@ namespace RUSO
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
 			{
-
 				consulta.ExecuteNonQuery();
 				databaseConnection.Close();
-
 			}
 			catch (Exception ex)
 			{
@@ -122,7 +120,6 @@ namespace RUSO
 		{
 
 		}
-
 
 		private void button5_Click(object sender, EventArgs e)
 		{
@@ -161,7 +158,7 @@ namespace RUSO
 				if (millas.Text != "" && modelo.Text != "" && vin.Text != "" )
 				{
 					consulta.ExecuteNonQuery();
-					MessageBox.Show("INGRSO CORRECTO");
+					MessageBox.Show("INGRESO CORRECTO");
 					log(operacion);
 					millas.Text = "";
 					vin.Text = "";
@@ -171,7 +168,6 @@ namespace RUSO
 					cc.Text = "";
 					databaseConnection.Close();
 					llenartabla();
-
 				}
 				else { MessageBox.Show("POR FAVOR LLENE TODOS LOS CAMPOS.\n\tGRACIAS!!"); databaseConnection.Close(); }
 			}
@@ -184,8 +180,8 @@ namespace RUSO
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			string query = "DELETE FROM vehiculos  WHERE  cod_vehiculo =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "DELETE FROM vehiculos  WHERE  cod_vehiculo =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "DELETE FROM vehiculos WHERE cod_vehiculo =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			operacion = "DELETE FROM vehiculos WHERE cod_vehiculo =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try

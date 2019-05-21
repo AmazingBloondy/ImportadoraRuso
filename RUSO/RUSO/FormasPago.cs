@@ -32,7 +32,7 @@ namespace RUSO
 
 			MySqlCommand codigo = new MySqlCommand();
 			codigo.Connection = databaseConnection;
-			codigo.CommandText = ("SELECT * FROM Formas_Pago");
+			codigo.CommandText = ("SELECT * FROM formas_pago");
 			try
 			{
 				MySqlDataAdapter ejecutar = new MySqlDataAdapter();
@@ -196,7 +196,6 @@ namespace RUSO
 					actualizarbtn.Enabled = false;
 					ingresarbtn.Enabled = true;
 					eliminarbtn.Enabled = true;
-
 				}
 				else { MessageBox.Show("POR FAVOR LLENE EL CAMPO.\n\tGRACIAS!!"); databaseConnection.Close(); }
 			}

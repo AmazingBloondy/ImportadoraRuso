@@ -120,7 +120,7 @@ namespace RUSO
 				if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" )
 				{
 					consulta.ExecuteNonQuery();
-					MessageBox.Show("INGRSO CORRECTO");
+					MessageBox.Show("INGRESO CORRECTO");
 					log(operacion);
 					textBox1.Text = "";
 					textBox3.Text = "";
@@ -140,8 +140,8 @@ namespace RUSO
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			string query = "DELETE FROM exportadores  WHERE  cod_exportador =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			operacion = "DELETE FROM exportadores  WHERE  cod_exportador =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "DELETE FROM exportadores WHERE cod_exportador =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			operacion = "DELETE FROM exportadores WHERE cod_exportador =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try
@@ -154,7 +154,6 @@ namespace RUSO
 					llenartabla();
 					databaseConnection.Open();
 					log(operacion);
-
 				}
 				else { MessageBox.Show("Por favor Seleccione un registro"); databaseConnection.Close(); }
 			}
@@ -183,7 +182,7 @@ namespace RUSO
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
             string query = "UPDATE exportadores SET nombre_exportador ='" + textBox1.Text + "', pais = '" + textBox2.Text + "', sitio_web='" + textBox3.Text + "' WHERE  cod_exportador =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            operacion = "UPDATE Talleres SET nombre_exportador =" + textBox1.Text + ", pais = " + textBox2.Text + ", sitio_web=" + textBox3.Text + " WHERE  cod_exportador =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            operacion = "UPDATE exportadores SET nombre_exportador =" + textBox1.Text + ", pais = " + textBox2.Text + ", sitio_web=" + textBox3.Text + " WHERE  cod_exportador =" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			databaseConnection.Open();
 			MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
 			try

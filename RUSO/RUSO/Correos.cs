@@ -31,7 +31,7 @@ namespace RUSO
 		{
 			MySqlCommand codigo = new MySqlCommand();
 			codigo.Connection = databaseConnection;
-			codigo.CommandText = ("SELECT * FROM Correos");
+			codigo.CommandText = ("SELECT * FROM correos");
 			try
 			{
 				MySqlDataAdapter ejecutar = new MySqlDataAdapter();
@@ -132,9 +132,9 @@ namespace RUSO
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-            string query = "INSERT INTO Correos (propietario, nombre, correo)" +
+            string query = "INSERT INTO correos (propietario, nombre, correo)" +
             " VALUES ('" + txtProp.Text + "','" + txtNombre.Text + "','" + txtCorreo.Text + "')";
-            operacion = "INSERT INTO Correos (propietario, nombre, correo)" +
+            operacion = "INSERT INTO correos (propietario, nombre, correo)" +
             " VALUES (" + txtProp.Text + "," + txtNombre.Text + "," + txtCorreo.Text + ")";
             databaseConnection.Open();
             MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
@@ -162,8 +162,8 @@ namespace RUSO
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-            string query = "DELETE FROM Correos WHERE cod_correo =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            operacion = "DELETE FROM Correos WHERE cod_correo =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string query = "DELETE FROM correos WHERE cod_correo =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            operacion = "DELETE FROM correos WHERE cod_correo =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
             MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
             try
@@ -203,9 +203,9 @@ namespace RUSO
 
 		private void actualizarbtn_Click(object sender, EventArgs e)
 		{
-            string query = "UPDATE Correos SET propietario= '" + txtProp.Text + "', nombre='" + txtNombre.Text +
+            string query = "UPDATE correos SET propietario= '" + txtProp.Text + "', nombre='" + txtNombre.Text +
                 "', correo='" + txtCorreo.Text + "'" + " WHERE cod_correo=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            operacion = "UPDATE Correos SET propietario= " + txtProp.Text + ", nombre=" + txtNombre.Text +
+            operacion = "UPDATE correos SET propietario= " + txtProp.Text + ", nombre=" + txtNombre.Text +
                 ", correo=" + txtCorreo.Text + "" + " WHERE cod_correo=" + codaux; //+ dataGridView1.CurrentRow.Cells[0].Value.ToString();
             databaseConnection.Open();
             MySqlCommand consulta = new MySqlCommand(query, databaseConnection);
